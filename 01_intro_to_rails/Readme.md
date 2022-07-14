@@ -44,8 +44,13 @@ Demo seeds
 - Migrate and create production seeds
 
 Demo rails routes 
-- Create a custom route `get "/productions", to: "productions#index"`
-- use `rails routes` in the terminal to confirm the route
+- Create a custom route 
+```rb
+get "/productions", to: "productions#index"
+```
+- run `rails routes` in the terminal to confirm the route
+- review output of `rails routes` 
+
 Demo controller actions 
 - Create an index controller action.
 	- Access the model with Production.all
