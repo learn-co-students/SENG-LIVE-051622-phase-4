@@ -19,32 +19,40 @@ Flatiron Theater Company has hired us to build a web app. The app will have User
 
 	![production image here](./assets/MVC.png)   
 
-- Demo creating a rails app
-    - `rails _6.1.4_ new flatiron-theater --api --minimal` We will be working with rails 6.
-    - Explore the file structure of the app and important files and folders.
-- Review rails generators 
-	- `rails g`
-	- `rails g migration`
-	- `rails g model`
-	- `rails g controller`
-	- `rails g resource`
-	- `rails g scaffold`
-- create a migration model and controller for production   
+Creating a rails app: 
+```rb
+rails _6.1.4_ new flatiron-theater --api --minimal -T
+``` 
+
+This will create a Rails application using version 6.
+
+Lets explore the file structure of the app and important files and folders.
+
+Rails generators: 
+- `rails g`
+- `rails g migration`
+- `rails g model`
+- `rails g controller`
+- `rails g resource`
+- `rails g scaffold`
+
+Create a migration model and controller for production using the information from following image for reference:
 
 	![production image here](./assets/production.png)   
 
-- Demo seeds
-	- Migrate and create production seeds
--  Demo rails routes 
-	- Create a custom route `get "/productions", to: "productions#index"`
-	- use `rails routes` in the terminal to confirm the route
-- Demo controller actions 
-	- Create an index controller action.
-		- Access the model with Production.all
-		- render the productions in json
-		- add a status of ok
-		- spin up the server with `rails s`
-		- verify your one route is working in the browser
+Demo seeds
+- Migrate and create production seeds
+
+Demo rails routes 
+- Create a custom route `get "/productions", to: "productions#index"`
+- use `rails routes` in the terminal to confirm the route
+Demo controller actions 
+- Create an index controller action.
+	- Access the model with Production.all
+	- render the productions in json
+	- add a status of ok
+	- spin up the server with `rails s`
+	- verify your one route is working in the browser
 
 
 
