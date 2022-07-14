@@ -15,7 +15,7 @@
 
 Flatiron Theater Company has hired us to build a web app. The app will have Users and Admin accounts. The theater's productions will be viewable to the general public, and users will be able to purchase tickets. 
 
-Review MVC before Demoing   
+Review MVC
 
 ![production image here](./assets/MVC.png)   
 
