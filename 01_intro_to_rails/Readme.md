@@ -19,7 +19,7 @@ Review MVC
 
 ![production image here](./assets/MVC.png)   
 
-Creating a rails app: 
+Creating a rails app:
 ```rb
 rails _6.1.4_ new flatiron-theater --api --minimal -T
 ``` 
@@ -40,6 +40,28 @@ Create a migration model and controller for production using the information fro
 
 ![production image here](./assets/production.png)
 
+Two ways to do this:
+
+1. Run each generator as a standalone:
+
+```rb
+rails g model production title genre description:text budget:float image director ongoing:boolean
+```
+
+Will produce the model and migration 
+
+```rb 
+rails g controller production
+```
+
+2. Using the resource generator:
+
+```rb
+rails g resource production title genre description:text budget:float image director ongoing:boolean
+``` 
+
+This will produce a model, migration, controller and more!
+
 Demo seeds
 - Migrate and create production seeds
 
@@ -48,7 +70,18 @@ Demo rails routes
 ```rb
 get "/productions", to: "productions#index"
 ```
-- run `rails routes` in the terminal to confirm the route
+Inside the terminal, run:
+
+```bash 
+rails routes
+``` 
+
+Can also be specific about which routes to output:
+
+```bash 
+rails routes | grep production
+``` 
+
 - review output of `rails routes` 
 
 Demo controller actions 
@@ -56,8 +89,21 @@ Demo controller actions
 	- Access the model with Production.all
 	- render the productions in json
 	- add a status of ok
-	- spin up the server with `rails s`
-	- verify your one route is working in the browser
+
+```rb
+class ProductionsController < ApplicationController
+    def index 
+        render json: Production.all, status: :ok
+    end 
+end
+
+```
+Start the server with:
+
+```bash 
+rails s
+```
+Confirm index route is working in the browser by navigating to `/productions` endpoint
 
 
 
