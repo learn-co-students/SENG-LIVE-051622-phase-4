@@ -15,9 +15,9 @@
 
 Flatiron Theater Company has hired us to build a web app. The app will have Users and Admin accounts. The theater's productions will be viewable to the general public, and users will be able to purchase tickets. 
 
-- Review MVC before Demoing   
+Review MVC before Demoing   
 
-	![production image here](./assets/MVC.png)   
+![production image here](./assets/MVC.png)   
 
 Creating a rails app: 
 ```rb
@@ -38,7 +38,7 @@ Rails generators:
 
 Create a migration model and controller for production using the information from following image for reference:
 
-	![production image here](./assets/production.png)   
+![production image here](./assets/production.png)
 
 Demo seeds
 - Migrate and create production seeds
