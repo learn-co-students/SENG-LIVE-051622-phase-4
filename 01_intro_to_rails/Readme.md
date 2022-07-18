@@ -29,12 +29,12 @@ This will create a Rails application using version 6.
 Lets explore the file structure of the app and important files and folders.
 
 Rails generators: 
-- `rails g`
-- `rails g migration`
-- `rails g model`
-- `rails g controller`
-- `rails g resource`
-- `rails g scaffold`
+- `rails g`: give us a list of all the generators that we can use
+- `rails g migration`: to create a migration file 
+- `rails g model`: create a model file, as well as a migration file 
+- `rails g controller`: going to create a controller file
+- `rails g resource`: model, controller, migration and routes 
+- `rails g scaffold`: we arent going to use this, but could generate a functioning app 
 
 Create a migration model and controller for production using the information from following image for reference:
 
