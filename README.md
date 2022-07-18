@@ -1,4 +1,4 @@
-# SENG-LIVE-Phase-4-theater-company-template
+# SENG-LIVE-Phase-4-theater-company
 
 Phase Objectives
 - [ ] Create RESTful APIs
