@@ -17,7 +17,7 @@
 
     - Add a debugging tool to the production controller's index action to confirm that the fetch call triggers the controller action.
 
-- Demo error handling for GET requests
+BONUS: Error handling for GET requests
 
     - Review res.ok https://developer.mozilla.org/en-US/docs/Web/API/Response/ok
 
