@@ -24,7 +24,6 @@ REST
 | DELETE    	| /productions/:id 	| productions#delete 	|
 
 
-
 Demo custom routes 
 - In the routes file, create a GET welcome route that directs to a welcome action in the productions controller
 - use rails routes to show the new route
