@@ -1,35 +1,39 @@
 class ProductionsController < ApplicationController
-  
+    before_action :find_production, only: [:show, :update, :destroy]
+
     def index 
         render json: Production.all, status: :ok
     end 
 
     def show
-        production = Production.find(params[:id])
-        render json: production, status: :ok
-        rescue ActiveRecord::RecordNotFound => error 
-            render json: {message: error.message}
+        render json: @production, status: :ok
     end 
 
-    def create   
-        production = Production.create(production_params)
+    def create
+        production = Production.create!(production_params)
         render json: production, status: :created
+        # methods that will invoke our validations: .save, .valid?
+        
+        # .valid? 
+        # if production.valid? 
+        #     render json: production, status: :created
+        # else
+        #     render json: { errors: production.errors.full_messages}, status: :unprocessable_entity
+        # end
+
+        # rescue: for this we need to raise an exception
+        # rescue ActiveRecord::RecordInvalid => invalid 
+        #     render json: { errors: invalid.record.errors.full_messages }, status: :unprocessable_entity
     end 
 
     def update 
-        production = Production.find(params[:id])
-        production.update(production_params)
+        @production.update(production_params)
         render json: production, status: :accepted
-        rescue ActiveRecord::RecordNotFound => error 
-            render json: {message: error.message}
     end 
 
     def destroy
-        production = Production.find(params[:id])
-        production.destroy
+        @production.destroy
         head :no_content 
-        rescue ActiveRecord::RecordNotFound => error 
-            render json: {message: error.message}
     end 
 
     private
@@ -37,5 +41,9 @@ class ProductionsController < ApplicationController
     def production_params
         params.permit(:title, :genre, :description, :budget, :image, :director, :ongoing)
     end 
+
+    def find_production
+        @production = Production.find(params[:id])
+    end
 
 end
