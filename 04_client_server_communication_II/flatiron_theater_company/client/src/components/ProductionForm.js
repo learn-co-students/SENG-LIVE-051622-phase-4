@@ -10,20 +10,39 @@ function ProductionForm({ addProduction }) {
     director: "",
     description: "",
   });
+  const [errors, setErrors] = useState([])
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
+  console.log(formData)
+
   function onSubmit(e) {
     e.preventDefault();
     //POST '/productions'
+    fetch("/productions", {
+      method: "POST", 
+      headers: {
+        "Content-Type": "application/json"
+      }, 
+      body: JSON.stringify(formData)
+    })
+    .then(resp => {
+      if (resp.ok){
+        resp.json().then(production => addProduction(production))
+      } else { 
+        // first thing is figure out how to retain my errors that occur: set state to an array 
+        // 
+        resp.json().then(data => setErrors(Object.entries(data.errors).map(error => `${error[0]}, ${error[1]}`)))
+      }
+    })
   }
 
   return (
     <div className="App">
-      {errors ? errors.map((e) => <div>{e}</div>) : null}
+      {errors ? errors.map((e) => <div key={e[0]}>{e.slice(3)}</div>) : null}
       <Form onSubmit={onSubmit}>
         <label>Title </label>
         <input

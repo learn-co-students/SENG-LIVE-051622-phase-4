@@ -14,11 +14,11 @@ function App() {
 
 
   useEffect(() => {
-    fetch('/productions')
+    fetch('/productions') // /productions is because in package.json i defined a proxy
     .then(res => {
       if(res.ok){
         res.json().then(setProductions)
-      }else {
+      } else {
         res.json().then(data => setErrors(data.error))
       }
     })

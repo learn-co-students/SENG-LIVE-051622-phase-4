@@ -1,4 +1,5 @@
 # Client Server Communication
+
 ## SWBATs:
 - [ ] Observe fetching from client to show route and displaying a show page
 - [ ] Observe sending a PATCH request from React client

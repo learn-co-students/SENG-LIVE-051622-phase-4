@@ -10,12 +10,13 @@ class ProductionsController < ApplicationController
     end 
 
     def create
+        byebug
         production = Production.create!(production_params)
         render json: production, status: :created
     end 
 
     def update 
-        @production.update(production_params)
+        @production.update!(production_params)
         render json: production, status: :accepted
     end 
 

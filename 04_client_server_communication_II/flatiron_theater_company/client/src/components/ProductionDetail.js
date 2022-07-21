@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 function ProductionDetail({deleteProduction}) {
   const [production, setProduction] = useState({crew_members:[], performers_and_roles:[]})
+  const [errors, setErrors] = useState([])
   
   const params = useParams()
   const history = useHistory()
