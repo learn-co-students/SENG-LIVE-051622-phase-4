@@ -1,5 +1,6 @@
 # Active Record Associations in Rails
 ## SWBATs:
+
 - [ ] Observe how to use rails generators to create associations
 - [ ] Observe how to create new migrations to alter existing model
 - [ ] Observe how to create a new join instance from client
