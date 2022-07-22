@@ -29,7 +29,12 @@ function UserPage(){
             <h1>{user.name}</h1>
             <h3>Tickets</h3>
             <ul>
-               {/* tickets here */}
+               {user.tickets.map(ticket => (
+                <li>
+                    <h2>{ticket.production.title}</h2>
+                    <p>Price: {ticket.price}</p>
+                </li>
+               ))}
             </ul>
         </div>
     )
