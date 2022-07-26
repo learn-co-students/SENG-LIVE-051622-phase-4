@@ -13,8 +13,6 @@ Users -< Tickets > Producitons
 
 ## Deliverables
 
-
-
 Images:
 landingPageImage
 https://unsplash.com/photos/POd35V_uE4k
