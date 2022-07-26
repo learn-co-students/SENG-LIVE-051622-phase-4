@@ -8,8 +8,8 @@ p3 = Production.create(title: 'Carmen', genre: 'Opera', director:'Georges Bizet'
 p3 = Production.create(title: 'Hamilton', genre: 'Musical', director:'Lin-Manuel Miranda', description:'An American Musical is a sung-and-rapped-through musical by Lin-Manuel Miranda. It tells the story of American Founding Father Alexander Hamilton.', budget: 400000.00, image:'https://upload.wikimedia.org/wikipedia/en/thumb/8/83/Hamilton-poster.jpg/220px-Hamilton-poster.jpg', ongoing:false)
 
 
-u1 = User.create(name:'ix', email:'email@gmail.com', password:'1234')
-u2 = User.create(name:'rose', email:'rose@gmail.com', password:'1234')
+u1 = User.create(username:'ix', email:'email@gmail.com', password:'1234')
+u2 = User.create(username:'rose', email:'rose@gmail.com', password:'1234')
 
 CastMember.create(name:"Lily-Mai Harding", role:"Hamlet", production:Production.find_by(title:'Hamlet'))
 
