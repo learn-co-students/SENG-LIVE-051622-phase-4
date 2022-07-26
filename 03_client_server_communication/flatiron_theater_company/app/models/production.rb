@@ -1,3 +1,0 @@
-class Production < ApplicationRecord
-
-end
