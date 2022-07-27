@@ -33,7 +33,7 @@ function SignUp({updateUser}) {
                     history.push(`/users/${user.id}`)
                 })
             }else {
-                res.json().then(json => setErrors(Object.entries(json.errors)))
+                res.json().then(json => setErrors(json.errors))
             }
         })
        
@@ -64,7 +64,7 @@ function SignUp({updateUser}) {
        
         <input type='submit' value='Sign up!' />
       </Form>
-      {errors?errors.map(e => <div>{e[0]+': ' + e[1]}</div>):null}
+      {errors? <div>{errors}</div>:null}
         </>
     )
 }

@@ -35,7 +35,7 @@ function Navigation({ currentUser }) {
               <Link to="/productions/new">New Production</Link>
             </li>
             <li>
-              <Link to="/"> Home</Link>
+              <Link to="/">Home</Link>
             </li>
           </ul>
         )}
