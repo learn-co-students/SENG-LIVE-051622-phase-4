@@ -4,9 +4,10 @@ function UserPage(){
     const [user, setUser] = useState()
     const [loading, setLoading] = useState(true)
     const [errors, setErrors] = useState(false)
-    
+
     const params = useParams()
     const {id} = params
+
     useEffect(()=>{
         fetch(`/users/${id}`)
         .then(res => {

@@ -14,7 +14,7 @@ function Navigation({ currentUser }) {
     <Nav>
       <NavH1>Flatiron Theater Company</NavH1>
       <Menu>
-        {currentUser ? <button onClick={handleLogOut}>Log Out</button> : null}
+        <button onClick={handleLogOut}>Log Out</button>
         {!menu ? (
           <div onClick={() => setMenu(!menu)}>
             <GiHamburgerMenu size={30} />
