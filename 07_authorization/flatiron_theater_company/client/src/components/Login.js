@@ -4,19 +4,19 @@ import {Form} from '../styled/Form'
 
 function Login() {
     const [formData, setFormData] = useState({
-        name:'',
+        username:'',
         email:'',
         password:''
     })
     const [errors, setErrors] = useState([])
     const history = useHistory()
 
-    const {name, password} = formData
+    const {username, password} = formData
 
     function onSubmit(e){
         e.preventDefault()
         const user = {
-            name,
+            username,
             password
         }
         // Logs in user
@@ -47,7 +47,7 @@ function Login() {
         <label>
           Username
           </label>
-        <input type='text' name='name' value={name} onChange={handleChange} />
+        <input type='text' name='username' value={username} onChange={handleChange} />
       
         <label>
          Password

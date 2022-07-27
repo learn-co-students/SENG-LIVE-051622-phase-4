@@ -26,7 +26,7 @@ function UserPage(){
     if(errors) return <h1>{errors}</h1>
     return (
         <div>
-            <h1>{user.name}</h1>
+            <h1>{user.username}</h1>
             <h3>Tickets</h3>
             <ul>
                 {user.tickets.map(ticket => (

@@ -4,19 +4,19 @@ import {Form} from '../styled/Form'
 
 function SignUp() {
     const [formData, setFormData] = useState({
-        name:'',
+        username:'',
         email:'',
         password:''
     })
     const [errors, setErrors] = useState([])
     const history = useHistory()
 
-    const {name, email, password} = formData
+    const {username, email, password} = formData
 
     function onSubmit(e){
         e.preventDefault()
         const user = {
-            name,
+            username,
             email,
             password
         }
@@ -48,7 +48,7 @@ function SignUp() {
         <label>
           Username
           </label>  
-          <input type='text' name='name' value={name} onChange={handleChange} />
+          <input type='text' name='username' value={username} onChange={handleChange} />
        
         <label>
          Email
