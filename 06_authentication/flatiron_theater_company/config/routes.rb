@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   resources :tickets, only: [:create]
   resources :users, only: [:show, :create]
   # resources :cast_members
@@ -8,6 +9,7 @@ Rails.application.routes.draw do
   # get "/welcome", to: "productions#welcome"
   # get "/welcome/:id", to: "productions#welcome_show"
 
+  delete '/logout', to: "sessions#destroy"
 
   
 
