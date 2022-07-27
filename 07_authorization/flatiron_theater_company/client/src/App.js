@@ -14,6 +14,7 @@ import NotFound from './components/NotFound'
 function App() {
   const [productions, setProductions] = useState([])
   const [errors, setErrors] = useState(false)
+  const [currentUser, setCurrentUser] = useState(false)
 
 
   useEffect(() => {
@@ -45,14 +46,15 @@ function App() {
 
   const deleteProduction = (id) => setProductions(current => current.filter(p => p.id !== id)) 
 
-  
+  const updateUser = (user) => setCurrentUser(user)
+
   if(errors) return <h1>{errors}</h1>
 
 
   return (
     <>
     <GlobalStyle />
-    <Navigation updateUser={updateUser}/>
+    <Navigation currentUser={currentUser}/>
       <Switch>
 
       <Route  path='/productions/new'>
@@ -67,7 +69,7 @@ function App() {
       </Route>
 
       <Route path='/users/new'>
-        <SignUp />
+        <SignUp updateUser={updateUser}/>
       </Route>
 
       <Route path='/users/:id'>
@@ -80,7 +82,7 @@ function App() {
 
     
       <Route exact path='/'>
-        <Home  productions={productions}/>
+        <Home productions={productions}/>
       </Route>
 
       <Route>
