@@ -23,7 +23,7 @@ function Navigation({ currentUser }) {
           <ul>
             <li onClick={() => setMenu(!menu)}>x</li>
             <li>
-              <Link to="/users/1">User Page</Link>
+              {currentUser ? <Link to={`/users/${currentUser.id}`}>Account</Link> : null }
             </li>
             <li>
               <Link to="/users/new">Sign Up</Link>
