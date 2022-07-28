@@ -1,6 +1,7 @@
 # Deploying
 
 ## SWBATs:
+
 - [ ] Explain what it means to deploy an application
 - [ ] Observe how to configure an application for deployment
 - [ ] Observe how to deploy an application to heroku
@@ -16,8 +17,7 @@
 - To download for OSX: `brew tap heroku/brew && brew install heroku`
 - To download for WSL: `curl https://cli-assets.heroku.com/install.sh | sh`
 
-4. Ruby version: 2.6.8, 2.7.4, 3.0.2
-   2.7.4 is the recommended version
+4. Ruby version: 2.7.4 is the recommended version
 
 - Check Ruby version using `ruby -v`
 - Update Ruby version with `rvm install <version>`
@@ -53,6 +53,7 @@ rails new <app-name> --api --minimal --database=postgresql
 ```
 
 NOTE: For an existing SQLight app, follow the steps front the heroku docs to convert the application to PostgreSQL [docs](https://devcenter.heroku.com/articles/sqlite3)
+
 - If you are converting the application, be sure to run ` bundle lock --add-platform x86_64-linux --add-platform ruby` as well
 
 2. `cd app-name` and run the following command to ensure that bundler will be able to install the same gems on Heroku:
@@ -177,6 +178,12 @@ Navigate to `http://localhost:4000` to test
 npm run heroku-postbuild
 ```
 
+and 
+
+```bash
+mv client/build/* public
+```
+
 then
 
 ```bash
@@ -220,9 +227,9 @@ heroku create
 6. Commit changes to Heroku. The branch can be either `main` or `master`. Run `git branch` to see which branch you are on.
 
 ```bash
-git add . 
-git commit -m "changes" 
-git push heroku main 
+git add .
+git commit -m "changes"
+git push heroku main
 ```
 
 7. To run in browser
@@ -231,4 +238,35 @@ git push heroku main
 heroku open
 ```
 
-As your app is in production, if you run into any issues you can search the logs by running `heroku logs` 
+### Important commands:
+
+As your app is in production, if you run into any issues you can search the logs by running 
+```bash 
+heroku logs
+```
+
+If you have a db and seed file, replicate it on Heroku by running 
+```bash
+heroku run rails db:migrate db:seed
+```
+
+If you forget the URL your app is being hosted on, run `git config --list --local | grep heroku`
+
+To run Heroku locally you can:
+
+- Create a Procfile.dev in the root of your directory as well. 
+```bash
+touch Procfile.dev
+```
+
+- Add the following code to the `Procfile.dev` file:
+
+```
+web: PORT=4000 npm start --prefix client
+api: PORT=3000 bundle exec rails s
+```
+
+- run the command in terminal 
+```bash
+heroku local -f Procfile.dev
+```
