@@ -67,26 +67,7 @@ bundle lock --add-platform x86_64-linux --add-platform ruby
 rails db:create
 ```
 
-4. Make sure to comment back in `bcrypt` inside `gemfile` and run `bundle update` to be able to use password authentication methods provided by `has_secure_password`
-
-5. Create the model files with the rails model generator.
-
-6. Create controllers using rails controller generator to allow for namespacing. This will ensure that problems do not persist or interfere with React routing.
-
-```bash
-rails g controller api/<controller-name>
-```
-
-7. For authentication, need to configure support for cookies. Add the following:
-
-```rb
-# config/application.rb
-  config.middleware.use ActionDispatch::Cookies
-  config.middleware.use ActionDispatch::Session::CookieStore
-  config.action_dispatch.cookies_same_site_protection = :strict
-```
-
-8. Define a fallback route inside `config/routes.rb`
+4. Define a fallback route inside `config/routes.rb`
 
 ```rb
 ...
