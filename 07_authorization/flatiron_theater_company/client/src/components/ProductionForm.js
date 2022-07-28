@@ -9,7 +9,8 @@ function ProductionForm({addProduction}) {
     budget:'',
     image:'',
     director:'',
-    description:''
+    description:'',
+    user_id: ''
   })
   const [errors, setErrors] = useState([])
   

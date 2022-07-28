@@ -3,18 +3,23 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { GiHamburgerMenu } from "react-icons/gi";
 
-function Navigation({ currentUser }) {
+function Navigation({ currentUser, updateUser }) {
   const [menu, setMenu] = useState(false);
 
   const handleLogOut = () => {
     // DELETE `/logout`
+    fetch('/logout', {
+      method: 'DELETE'
+    })
+    updateUser(false)
+  
   };
 
   return (
     <Nav>
       <NavH1>Flatiron Theater Company</NavH1>
       <Menu>
-        <button onClick={handleLogOut}>Log Out</button>
+        {currentUser ? <button onClick={handleLogOut}>Log Out</button> : null}
         {!menu ? (
           <div onClick={() => setMenu(!menu)}>
             <GiHamburgerMenu size={30} />
