@@ -49,7 +49,7 @@
 1. Create a Rails app specifying that the database that will be used is Postgres
 
 ```bash
-rails new <app-name> --api --minimal --database=postgresql
+rails _6.1.6_ new <app-name> --api --minimal -T --database=postgresql
 ```
 
 NOTE: For an existing SQLight app, follow the steps front the heroku docs to convert the application to PostgreSQL [docs](https://devcenter.heroku.com/articles/sqlite3)
@@ -176,12 +176,6 @@ Navigate to `http://localhost:4000` to test
 
 ```bash
 npm run heroku-postbuild
-```
-
-and 
-
-```bash
-mv client/build/* public
 ```
 
 then
